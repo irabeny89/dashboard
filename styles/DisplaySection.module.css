@@ -1,0 +1,12 @@
+.displaysection {
+  border-radius: 1rem;
+  color: black;
+  background-color: ghostwhite;
+  flex: 1; 
+}
+.displaysection > h1 > span {
+  font-weight: normal;
+}
+.displaysection inputsearch {
+  
+}
