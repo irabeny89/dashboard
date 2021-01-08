@@ -19,6 +19,8 @@
 }
 .inputSearch input {
   background-color: #3c3f54;
+  color: white;
+  font-size: large;
   border-style: none;
   padding: 0 1rem;
   width: 30vw;
