@@ -1,6 +1,6 @@
 .navSection {
   color: ghostwhite;
-  flex: .1;
+  flex: 1;
   margin: 0 3rem;
 }
 .navSection > h1 > span {
@@ -53,4 +53,6 @@
   background-color: #3c3f54;
   border-style: none;
   padding: 0 1rem;
+  width: 30vw;
+  border: 2px solid red;
 }
