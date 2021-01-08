@@ -1,12 +1,66 @@
 .displaysection {
   border-radius: 1rem;
-  color: black;
   background-color: ghostwhite;
   flex: 1; 
+  padding: 1.5rem 1rem 1rem 2rem;
+  margin-right: 1rem;
 }
-.displaysection > h1 > span {
-  font-weight: normal;
+.inputs {
+  display: flex;
+  justify-content: space-between;
 }
-.displaysection inputsearch {
-  
+.searchBar {
+  display: flex;
+  align-items: center;
+  background-color: #e3e3ec;
+  border-radius: 2rem;
+  width: 9rem;
+  height: 2.2rem;
+  padding-left: 1rem;
+}
+.searchBar input {
+  border-style: none;
+  background-color: #e3e3ec;
+  padding: 1rem;
+  width: 6rem;
+  height: 2.2rem;
+}
+.countrySelect {
+  background-color: #e3e3ec;
+  height: 2.2rem;
+  width: 7rem;
+  padding: .3rem 0 0 1rem;
+  border-radius: 2rem;
+}
+.countrySelect select {
+  border-style: none;
+  background-color: #e3e3ec;
+}
+.dlPagination {
+  display: flex;
+  justify-content: space-between;
+}
+.dlPagination > button {
+  border-radius: 1rem;
+  height: 2rem;
+  align-self: center;
+  padding: 0 1rem;
+  background-color: #7946c1;
+  color: white;
+}
+.pagination {
+  display: flex;
+
+}
+.pagination p:first-of-type {
+  background-color: #e3e3ec;
+  padding: .3rem .5rem;
+  border-radius: .4rem;
+  margin-right: .3rem;
+}
+.pagination p:last-of-type {
+  background-color: #262a41;
+  color: white;
+  padding: .3rem .5rem;
+  border-radius: .4rem;
 }
