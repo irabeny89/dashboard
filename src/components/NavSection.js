@@ -2,7 +2,7 @@ import React from 'react'
 import styles from '../../styles/NavSection.module.css'
 import { FaFemale, FaMale, FaSearch, FaUsers } from 'react-icons/fa'
 
-const NavSection = ({user="user"}) => 
+const NavSection = ({user="Anonymous"}) => 
   <div className={styles.navSection}>
     <h1><span>Hello</span>, {user}</h1>
     <p className={styles.welcome}>
