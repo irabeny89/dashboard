@@ -2,8 +2,8 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-around;
-  background-color: #262a41;
+  justify-content: center;
+  background-color: var(--pry-color);
   min-height: 100vh;
   min-width: 100vw;
 }
