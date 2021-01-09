@@ -1,33 +1,65 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useRef, useState } from 'react'
 import styles from '../../styles/ControlSection.module.css'
 import { FaFemale, FaMale, FaSearch, FaUsers } from 'react-icons/fa'
 import { OutputContext } from './OutputSectionProvider'
 
 const ControlSection = ({ user = "Anonymous" }) => {
+  const transform = { initialScale: "none", newScale: "scale(1.2)" }
+  const { initialScale, newScale } = transform
+  const [allUsersIconScale, setAllUsersIconScale] = useState(newScale)
+  const [maleUsersIconScale, setMaleUsersIconScale] = useState(initialScale)
+  const [femaleUsersIconScale, setFemaleUsersIconScale] = useState(initialScale)
+  const allUsersIcon = useRef()
+  const maleUsersIcon = useRef()
+  const femaleUsersIcon = useRef()
   const { setOutputSectionTitle } = useContext(OutputContext)
-  const clickHandler = title => setOutputSectionTitle(title)
+
+  useEffect(_ => {
+    allUsersIcon.current.style.transform = allUsersIconScale
+    maleUsersIcon.current.style.transform = maleUsersIconScale
+    femaleUsersIcon.current.style.transform = femaleUsersIconScale
+  })
+
+  const clickHandler = (title, _ref) => {
+    if (_ref === allUsersIcon) {
+      _ref.current.style.transform = setAllUsersIconScale(newScale)
+      maleUsersIcon.current.style.transform = setMaleUsersIconScale(initialScale)
+      femaleUsersIcon.current.style.transform = setFemaleUsersIconScale(initialScale)
+    }
+    else if (_ref === maleUsersIcon) {
+      _ref.current.style.transform = setMaleUsersIconScale(newScale)
+      allUsersIcon.current.style.transform = setAllUsersIconScale(initialScale)
+      femaleUsersIcon.current.style.transform = setFemaleUsersIconScale(initialScale)
+    }
+    else {
+      _ref.current.style.transform = setFemaleUsersIconScale(newScale)
+      maleUsersIcon.current.style.transform = setMaleUsersIconScale(initialScale)
+      allUsersIcon.current.style.transform = setAllUsersIconScale(initialScale)
+    }
+    setOutputSectionTitle(title)
+  }
   return (
     <div className={styles.controlSection}>
-      <h1><span>Hello</span>, {user}</h1>
+      <h1><span>Hello,</span> {user}</h1>
       <p className={styles.welcome}>
         Welcome to your dashboard, kindly sort through the user base
       </p>
       <div className={styles.inputSearch}>
-        <FaSearch size="25" /><input placeholder="Find a user" />
+        <FaSearch size="20" /><input placeholder="Find a user" />
       </div>
       <h4>Show Users</h4>
       <div className={styles.options}>
-        <div onClick={() => clickHandler("All Users")}>
-          <div className={styles.allUsersIcon}><FaUsers size="50" /></div>
+        <div onClick={() => clickHandler("All Users", allUsersIcon)}>
+          <div ref={allUsersIcon} className={styles.allUsersIcon}><FaUsers size="40" /></div>
           <p>All Users</p>
         </div>
-        <div onClick={() => clickHandler("Male Users")}>
-          <div className={styles.allMaleUsersIcon}><FaMale size="50" /></div>
+        <div onClick={() => clickHandler("Male Users", maleUsersIcon)}>
+          <div ref={maleUsersIcon} className={styles.maleUsersIcon}><FaMale size="40" /></div>
           <p>Male Users</p>
         </div>
-        <div onClick={() => clickHandler("Female Users")}>
-          <div className={styles.allFemaleUsersIcon}>
-            <FaFemale size="50" />
+        <div onClick={() => clickHandler("Female Users", femaleUsersIcon)}>
+          <div ref={femaleUsersIcon} className={styles.femaleUsersIcon}>
+            <FaFemale size="40" />
           </div>
           <p>Female Users</p>
         </div>
