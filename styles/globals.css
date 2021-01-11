@@ -16,11 +16,13 @@ a {
 }
 
 :root {
-  --pry-color: #262a41;
-  --sec-color: #f7f7ff;
+  --bg-color: #262a41;
+  --ctrl-color: #ffffff;
+  --out-bg-color: #f5f5ff;
+  --ctrl-input-color: #3c3f54;
   --fav1-color: #f935a9;
   --fav2-color: #30bbb5;
   --fav3-color: #7946c1;
-  --fav4-color: #bdbec5;
-  --fav5-color: #3c3f54;
+  --fav4-color: #262a41;
+  --out-input-color: #e3e3ec;
 }

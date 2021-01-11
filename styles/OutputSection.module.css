@@ -1,9 +1,9 @@
 .outputSection {
+  background-color: var(--out-bg-color);
   border-radius: 1rem;
-  background-color: ghostwhite;
-  flex: 1; 
-  padding: 1.5rem 1rem 1rem 2rem;
-  margin-right: 1rem;
+  padding: 0 1rem;
+  flex: 1;
+  margin: 0 auto;
 }
 .inputs {
   display: flex;
@@ -11,56 +11,58 @@
 }
 .searchBar {
   display: flex;
+  flex: 1;
   align-items: center;
-  background-color: #e3e3ec;
+  background-color: var(--out-input-color);
   border-radius: 2rem;
-  width: 9rem;
   height: 2.2rem;
   padding-left: 1rem;
+  margin-right: .2rem;
 }
 .searchBar input {
+  background-color: var(--out-in-color);
   border-style: none;
-  background-color: #e3e3ec;
-  padding: 1rem;
-  width: 6rem;
   height: 2.2rem;
+  flex: 1;
 }
 .countrySelect {
-  background-color: #e3e3ec;
+  background-color: var(--out-input-color);
   height: 2.2rem;
-  width: 7rem;
-  padding: .3rem 0 0 1rem;
-  border-radius: 2rem;
+  line-height: 2.2rem;
+  border-radius: 3rem;
+  margin-right: .2rem;
+  
 }
 .countrySelect select {
+  border-radius: 3rem;
   border-style: none;
-  background-color: #e3e3ec;
+  background-color: var(--out-input-color);
 }
 .dlPagination {
   display: flex;
   justify-content: space-between;
 }
 .dlPagination > button {
-  border-radius: 1rem;
-  height: 2rem;
+  border-radius: 1.5rem;
+  border-style: none;
+  height: 2.5rem;
   align-self: center;
   padding: 0 1rem;
-  background-color: #7946c1;
-  color: white;
+  background-color:var(--fav3-color);
+  color: var(--out-bg-color);
 }
 .pagination {
   display: flex;
-
 }
 .pagination p:first-of-type {
-  background-color: #e3e3ec;
-  padding: .3rem .5rem;
+  background-color: var(--out-input-color);
+  padding: .3rem .7rem;
   border-radius: .4rem;
   margin-right: .3rem;
 }
 .pagination p:last-of-type {
-  background-color: #262a41;
+  background-color: var(--bg-color);
   color: white;
-  padding: .3rem .5rem;
+  padding: .3rem .7rem;
   border-radius: .4rem;
 }

@@ -1,11 +1,9 @@
 .controlSection {
-  margin: 0 7rem 0 6rem;
-  color: var(--sec-color);
-  flex-grow: 1;
+  color: var(--ctrl-color);
+  padding: 0 1rem;
 }
 .controlSection > h1 > span {
   font-weight: normal;
-  color: var(--fav4-color);
 }
 .controlSection > h1 {
   margin-bottom: .2rem;
@@ -17,20 +15,20 @@
 .inputSearch {
   display: flex;
   align-items: center;
-  background-color: var(--fav5-color);
+  background-color: var(--ctrl-input-color);
   border-radius: 1rem;
   height: 3.3rem;
   padding-left: 1.5rem;
   margin-bottom: 3rem;
 }
 .inputSearch input {
+  background-color: var(--ctrl-input-color);
   margin-left: 1rem;
-  background-color: var(--fav5-color);
-  color: var(--sec-color);
   font-size: large;
   border-style: none;
   height: 3rem;
   flex-grow: 1;
+  border-radius: 1rem;
 }
 .options {
   display: flex;
@@ -40,7 +38,7 @@
   padding: .9rem 1.2rem;
   margin-right: 1.5rem;
   border-radius: 1rem;
-  transition: transform 500ms ease;
+  transition: transform 500ms;
   background-color: var(--fav1-color);
 }
 .maleUsersIcon {
@@ -48,12 +46,12 @@
   margin-right: 1.5rem;
   border-radius: 1rem;
   background-color: var(--fav2-color);
-  transition: transform 600ms ease;
+  transition: transform 500ms;
 }
 .femaleUsersIcon {
   padding: .9rem 1.2rem;
   margin-right: 1.5rem;
   border-radius: 1rem;
   background-color: var(--fav3-color);
-  transition: transform 600ms ease;
+  transition: transform 500ms;
 }
