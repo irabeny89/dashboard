@@ -1,9 +1,9 @@
 import '../styles/globals.css'
-import OutputSectionProvider from '../src/components/OutputSectionProvider'
+import ContextProvider from '../src/components/ContextProvider'
 
 function MyApp({ Component, pageProps }) {
   return (
-    <OutputSectionProvider><Component {...pageProps} /></OutputSectionProvider>
+    <ContextProvider><Component {...pageProps} /></ContextProvider>
   )
 }
 
