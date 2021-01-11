@@ -1,10 +1,10 @@
 import React, { useContext, useEffect, useRef, useState } from 'react'
 import styles from '../../styles/ControlSection.module.css'
 import { FaFemale, FaMale, FaSearch, FaUsers } from 'react-icons/fa'
-import { OutputContext } from './OutputSectionProvider'
+import { Context } from './ContextProvider'
 
-const ControlSection = ({ user = "Anonymous" }) => {
-  const transform = { initialScale: "none", newScale: "scale(1.2)" }
+const ControlSection = ({ user = "Ernest" }) => {
+  const transform = { initialScale: "none", newScale: "scale(1.3)" }
   const { initialScale, newScale } = transform
   const [allUsersIconScale, setAllUsersIconScale] = useState(newScale)
   const [maleUsersIconScale, setMaleUsersIconScale] = useState(initialScale)
@@ -12,7 +12,7 @@ const ControlSection = ({ user = "Anonymous" }) => {
   const allUsersIcon = useRef()
   const maleUsersIcon = useRef()
   const femaleUsersIcon = useRef()
-  const { setOutputSectionTitle } = useContext(OutputContext)
+  const { setOutputSectionTitle } = useContext(Context)
 
   useEffect(_ => {
     allUsersIcon.current.style.transform = allUsersIconScale
