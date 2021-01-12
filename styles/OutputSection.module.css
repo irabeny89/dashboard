@@ -1,48 +1,45 @@
 .outputSection {
   background-color: var(--out-bg-color);
   border-radius: 1rem;
-  padding: 0 1rem;
-  flex: 1;
-  margin: 0 auto;
+  padding: 0 2rem;
+  margin-bottom: 1.5rem;
 }
 .inputs {
   display: flex;
-  justify-content: space-between;
 }
 .searchBar {
+  height: 2.3rem;
+  padding-left: 1rem;
   display: flex;
-  flex: 1;
   align-items: center;
   background-color: var(--out-input-color);
   border-radius: 2rem;
-  height: 2.2rem;
-  padding-left: 1rem;
-  margin-right: .2rem;
 }
 .searchBar input {
-  background-color: var(--out-in-color);
   border-style: none;
-  height: 2.2rem;
-  flex: 1;
+  border-radius: 3rem;
+  padding-left: 1rem;  
+  background-color: var(--out-in-color);
+  padding-top: .4rem;
+  padding-bottom: .4rem;
 }
 .countrySelect {
   background-color: var(--out-input-color);
-  height: 2.2rem;
-  line-height: 2.2rem;
   border-radius: 3rem;
-  margin-right: .2rem;
-  
 }
 .countrySelect select {
-  border-radius: 3rem;
   border-style: none;
+  border-radius: 3rem;
+  padding: .5rem;
   background-color: var(--out-input-color);
 }
-.dlPagination {
+.downloadPagination {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
+  align-items: center;
 }
-.dlPagination > button {
+.downloadPagination button {
   border-radius: 1.5rem;
   border-style: none;
   height: 2.5rem;
@@ -65,4 +62,25 @@
   color: white;
   padding: .3rem .7rem;
   border-radius: .4rem;
+}
+
+@media (min-width: 1024px) {
+  .outputSection {
+    margin: unset;
+  }
+  .inputs {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .searchBar {
+    margin: unset;
+    flex: 2;
+  }
+  .countrySelect {
+    flex: 1;
+    text-align: center;
+    margin: 0 1.5rem;
+  }
+
 }

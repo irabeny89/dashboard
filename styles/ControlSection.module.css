@@ -1,6 +1,7 @@
 .controlSection {
   color: var(--ctrl-color);
-  padding: 0 1rem;
+  padding: 0 4%;
+  margin-bottom: 1.5rem;
 }
 .controlSection > h1 > span {
   font-weight: normal;
@@ -27,12 +28,12 @@
   font-size: large;
   border-style: none;
   height: 3rem;
-  flex-grow: 1;
   border-radius: 1rem;
+  flex: 1;
 }
 .options {
   display: flex;
-  margin: 2.5rem 0;
+  
 }
 .allUsersIcon {
   padding: .9rem 1.2rem;
