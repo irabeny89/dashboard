@@ -23,10 +23,12 @@ const OutputSection = _ => {
         <CountryToggle />
       </div>
       <UsersList />
-      <div className={styles.dlPagination}>
-        <button>
-          <FaCloudDownloadAlt /> Download results
-        </button>
+      <div className={styles.downloadPagination}>
+        <div>
+          <button>
+            <FaCloudDownloadAlt /> Download results
+          </button>
+        </div>
         <div className={styles.pagination}>
           <p>&lt;</p><p>&gt;</p>
         </div>

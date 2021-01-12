@@ -7,13 +7,17 @@ import { FaArrowRight } from 'react-icons/fa'
 
 const User = ({thumbnail, name, location, phone, email}) => 
   <div className={styles.user}>
-    <div><Image src={thumbnail} width="100" height="100" /></div>
+    <div><Image src={thumbnail} width="90" height="90" /></div>
     <div>
       <h3>{name.first} {name.last}</h3>
       <p>{location.street}, {location.city}, {location.state}</p>
-      <div>
-        <p className={styles.phoneEmail}><div><CgMail size="20" /></div> {email}</p>
-        <p className={styles.phoneEmail}><div><FiPhoneCall /></div> {phone}</p>
+      <div className={styles.phoneEmail}>
+        <div className={styles.email}>
+          <CgMail size="20" /> &nbsp;{email}
+        </div>
+        <div className={styles.phone}>
+          <FiPhoneCall /> &nbsp;{phone}
+        </div>
       </div>
     </div>
     <div><FaArrowRight /></div>
