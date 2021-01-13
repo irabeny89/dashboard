@@ -1,35 +1,16 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import User from './User'
 import styles from '../../styles/UserList.module.css'
+import { Context } from './ContextProvider'
+import { filter } from '../utils/filter'
 
 const UsersList = _ => {
-  const users = [
-    {
-      thumbnail: "/favicon.ico",
-      name: { first: "shalom", last: "gibson" },
-      location: {
-        street: "9278 new road",
-        city: "kilcoole",
-        state: "waterford",
-      },
-      email: "brad.gibson@example.com",
-      phone: "011-962-7516"
-    },
-    {
-      thumbnail: "/favicon.ico",
-      name: { first: "shalom", last: "gibson" },
-      location: {
-        street: "9278 new road",
-        city: "kilcoole",
-        state: "waterford",
-      },
-      email: "brad.gibson@example.com",
-      phone: "011-962-7516"
-    }
-  ]
-  return (
+  const { users, gender, error, input } = useContext(Context)
+  
+  return( 
     <div className={styles.userList}>
-      {users.map(user => <div key={user.phone}><User {...user} /></div>)}
+      {filter(gender, users, input)
+        .map(user => <User key={user.dob.date} {...user} />)}
     </div>
   )
 }
