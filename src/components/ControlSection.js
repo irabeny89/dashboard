@@ -12,7 +12,12 @@ const ControlSection = ({ user = "Ernest" }) => {
   const allUsersIcon = useRef()
   const maleUsersIcon = useRef()
   const femaleUsersIcon = useRef()
-  const { setOutputSectionTitle } = useContext(Context)
+  const {
+    setOutputSectionTitle,
+    setGender,
+    controlInput,
+    controlInputHandler
+  } = useContext(Context)
 
   useEffect(_ => {
     allUsersIcon.current.style.transform = allUsersIconScale
@@ -22,16 +27,19 @@ const ControlSection = ({ user = "Ernest" }) => {
 
   const clickHandler = (title, _ref) => {
     if (_ref === allUsersIcon) {
+      setGender("")
       _ref.current.style.transform = setAllUsersIconScale(newScale)
       maleUsersIcon.current.style.transform = setMaleUsersIconScale(initialScale)
       femaleUsersIcon.current.style.transform = setFemaleUsersIconScale(initialScale)
     }
     else if (_ref === maleUsersIcon) {
+      setGender("male")
       _ref.current.style.transform = setMaleUsersIconScale(newScale)
       allUsersIcon.current.style.transform = setAllUsersIconScale(initialScale)
       femaleUsersIcon.current.style.transform = setFemaleUsersIconScale(initialScale)
     }
     else {
+      setGender("female")
       _ref.current.style.transform = setFemaleUsersIconScale(newScale)
       maleUsersIcon.current.style.transform = setMaleUsersIconScale(initialScale)
       allUsersIcon.current.style.transform = setAllUsersIconScale(initialScale)
@@ -45,7 +53,9 @@ const ControlSection = ({ user = "Ernest" }) => {
         Welcome to your dashboard, kindly sort through the user base
       </p>
       <div className={styles.inputSearch}>
-        <FaSearch size="20" /><input placeholder="Find a user" />
+        <FaSearch size="20" />
+        <input value={controlInput} placeholder="Find a user"
+          onChange={controlInputHandler} />
       </div>
       <h4>Show Users</h4>
       <div className={styles.options}>
