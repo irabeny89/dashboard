@@ -1,0 +1,7 @@
+@media (min-width: 768px) {
+  .userList {
+    height: 62vh;
+    overflow-y: auto;
+    margin-bottom: 1rem;
+  }
+}

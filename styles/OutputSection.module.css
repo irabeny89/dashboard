@@ -4,6 +4,11 @@
   padding: 0 2rem;
   margin-bottom: 1.5rem;
 }
+.notice {
+  float: right;
+  background-color: red;
+  color: white;
+}
 .inputs {
   display: flex;
 }
@@ -39,14 +44,14 @@
   justify-content: space-between;
   align-items: center;
 }
-.downloadPagination button {
+.downloadPagination a {
   border-radius: 1.5rem;
-  border-style: none;
   height: 2.5rem;
   align-self: center;
-  padding: 0 1rem;
+  padding: .5rem 1rem;
   background-color:var(--fav3-color);
   color: var(--out-bg-color);
+  cursor: pointer;
 }
 .pagination {
   display: flex;
@@ -56,12 +61,14 @@
   padding: .3rem .7rem;
   border-radius: .4rem;
   margin-right: .3rem;
+  cursor: pointer;
 }
 .pagination p:last-of-type {
   background-color: var(--bg-color);
   color: white;
   padding: .3rem .7rem;
   border-radius: .4rem;
+  cursor: pointer;
 }
 
 @media (min-width: 1024px) {

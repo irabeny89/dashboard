@@ -7,6 +7,9 @@
   background-color: white;
   border-radius: 1rem;
 }
+.image {
+  border-radius: 50%;
+}
 .user > div:first-of-type {
   border: .4rem solid var(--fav2-color);
   border-radius: 50%;
@@ -32,6 +35,7 @@
   border-radius: 1rem;
   color: white;
   margin-top: 1rem;
+  cursor: pointer;
 }
 
 @media (min-width: 1024px) {

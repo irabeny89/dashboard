@@ -30,6 +30,7 @@
   height: 3rem;
   border-radius: 1rem;
   flex: 1;
+  color: white;
 }
 .options {
   display: flex;
@@ -41,6 +42,7 @@
   border-radius: 1rem;
   transition: transform 500ms;
   background-color: var(--fav1-color);
+  cursor: pointer;
 }
 .maleUsersIcon {
   padding: .9rem 1.2rem;
@@ -48,6 +50,7 @@
   border-radius: 1rem;
   background-color: var(--fav2-color);
   transition: transform 500ms;
+  cursor: pointer;
 }
 .femaleUsersIcon {
   padding: .9rem 1.2rem;
@@ -55,4 +58,5 @@
   border-radius: 1rem;
   background-color: var(--fav3-color);
   transition: transform 500ms;
+  cursor: pointer;
 }
