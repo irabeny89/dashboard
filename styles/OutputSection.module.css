@@ -27,6 +27,7 @@
   background-color: var(--out-in-color);
   padding-top: .4rem;
   padding-bottom: .4rem;
+  flex: 1;
 }
 .countrySelect {
   background-color: var(--out-input-color);
