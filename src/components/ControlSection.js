@@ -3,7 +3,7 @@ import styles from '../../styles/ControlSection.module.css'
 import { FaFemale, FaMale, FaSearch, FaUsers } from 'react-icons/fa'
 import { Context } from './ContextProvider'
 
-const ControlSection = ({ user = "Ernest" }) => {
+const ControlSection = ({ user = "Dev" }) => {
   const transform = { initialScale: "none", newScale: "scale(1.3)" }
   const { initialScale, newScale } = transform
   const [allUsersIconScale, setAllUsersIconScale] = useState(newScale)
@@ -46,6 +46,7 @@ const ControlSection = ({ user = "Ernest" }) => {
     }
     setOutputSectionTitle(title)
   }
+  
   return (
     <div className={styles.controlSection}>
       <h1><span>Hello,</span> {user}</h1>

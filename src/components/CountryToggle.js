@@ -21,8 +21,8 @@ const CountryToggle = _ => {
       default:
         break;
     }
-
   }
+  
   return (
     <div onClick={toggleFlag} className={styles.countryToggle}>
       <div className={styles.toggleBg}>

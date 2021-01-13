@@ -2,7 +2,6 @@ import React, { createContext, useEffect, useState } from 'react'
 import axios from 'axios'
 
 export const Context = createContext()
-
 const ContextProvider = ({ children }) => {
   const [selectedUser, setSelectedUser] = useState("All Users")
   const setOutputSectionTitle = selectedOption =>
@@ -21,7 +20,7 @@ const ContextProvider = ({ children }) => {
 
   useEffect(async () => {
     try {
-      const api = `https://randomuser.me/api/?page=${page}&results=5&seed=aaa`
+      const api = `https://randomuser.me/api/?page=${page}&results=10&seed=aaa`
       const { data } = await axios.get(api)
       setUsers(data.results)
       setDownload(api)
@@ -51,6 +50,7 @@ const ContextProvider = ({ children }) => {
     outputInput,
     outputInputHandler
   }
+  
   return (
     <Context.Provider value={outputSectionData}>
       {children}

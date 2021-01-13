@@ -17,10 +17,11 @@ const OutputSection = ({ allUsers }) => {
     outputInput,
     outputInputHandler
   } = useContext(Context)
+
   return (
     <div className={styles.outputSection}>
       {error && 
-        <div className={styles.notice}>{error}. Please reload</div> 
+        <div className={styles.notice}>{error}. You may have to reload</div> 
         || !users.length && 
         <div className={styles.notice}>Loading... Please wait.</div>}
       <h2>{selectedUser}</h2>
