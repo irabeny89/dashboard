@@ -6,31 +6,46 @@ import CountrySelection from './CountrySelection'
 import UsersList from './UsersList'
 import CountryToggle from './CountryToggle'
 
-const OutputSection = _ => {
-  const { selectedUser } = useContext(Context)
+const OutputSection = ({ allUsers }) => {
+  const {
+    selectedUser,
+    users,
+    paginate,
+    setPage,
+    download,
+    error,
+    outputInput,
+    outputInputHandler
+  } = useContext(Context)
   return (
     <div className={styles.outputSection}>
+      {error && 
+        <div className={styles.notice}>{error}. Please reload</div> 
+        || !users.length && 
+        <div className={styles.notice}>Loading... Please wait.</div>}
       <h2>{selectedUser}</h2>
       <p>Filter by</p>
       <div className={styles.inputs}>
         <div className={styles.searchBar}>
           <FaSearch size="14" color="grey" />
-          <input placeholder="Find in list" />
+          <input value={outputInput} placeholder="Find in list"
+            onChange={outputInputHandler} />
         </div>
         <div className={styles.countrySelect}>
           <CountrySelection />
         </div>
         <CountryToggle />
       </div>
-      <UsersList />
+      <UsersList allUsers={allUsers} />
       <div className={styles.downloadPagination}>
         <div>
-          <button>
+          <a href={download+"&format=csv&noinfo"}>
             <FaCloudDownloadAlt /> Download results
-          </button>
+          </a>
         </div>
         <div className={styles.pagination}>
-          <p>&lt;</p><p>&gt;</p>
+          <p onClick={_ => paginate("dec", setPage)}>&lt;</p>
+          <p onClick={_ => paginate("inc", setPage)}>&gt;</p>
         </div>
       </div>
     </div>
