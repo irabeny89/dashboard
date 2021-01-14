@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { Context } from './ContextProvider'
 
+
 const CountrySelection = () => {
   const { countryEnable, users } = useContext(Context)
   const filterCountry = (users = []) => 
@@ -12,7 +13,7 @@ const CountrySelection = () => {
     <select disabled={countryEnable}>
       <option>Country</option>
       {countries.map(country => 
-        <option key={country}>{country}</option>)}
+        <option key={Math.random()}>{country}</option>)}
     </select>
   )
 }

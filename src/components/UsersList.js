@@ -2,9 +2,17 @@ import React, { useContext } from 'react'
 import User from './User'
 import styles from '../../styles/UserList.module.css'
 import { Context } from './ContextProvider'
+import Profile from './Profile'
 
 const UsersList = _ => {
-  const { users, gender, controlInput, outputInput } = useContext(Context)
+  const {
+    users,
+    gender,
+    controlInput,
+    outputInput,
+    showProfile,
+    userName
+  } = useContext(Context)
 
 const filter = (gender, users, controlInput, outputInput) =>
   controlInput && users.filter(({ name }) => 
@@ -15,11 +23,14 @@ const filter = (gender, users, controlInput, outputInput) =>
   gender == "female" && users.filter(({ gender }) => gender === "female") ||
   users
   
-  return( 
-    <div className={styles.userList}>
-      {filter(gender, users, controlInput, outputInput)
-        .map(user => <User key={user.dob.date} {...user} />)}
-    </div>
+  return(
+    showProfile ? 
+      <Profile user={users.filter(({name: {first, last}}) => 
+        first === `${userName.first}` && last === `${userName.last}`)} /> :
+      <div className={styles.userList}>
+        {filter(gender, users, controlInput, outputInput)
+          .map(user => <User key={user.dob.date} {...user} />)}
+      </div>
   )
 }
 
