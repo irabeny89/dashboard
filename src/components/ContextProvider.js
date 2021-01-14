@@ -14,6 +14,8 @@ const ContextProvider = ({ children }) => {
   const [download, setDownload] = useState("")
   const [controlInput, setControlInput] = useState("")
   const [outputInput, setOutputInput] = useState("")
+  const [showProfile, setShowProfile] = useState(false)
+  const [userName, setUserName] = useState({})
 
   const controlInputHandler = e => setControlInput(e.target.value)
   const outputInputHandler = e => setOutputInput(e.target.value)
@@ -30,6 +32,13 @@ const ContextProvider = ({ children }) => {
   const paginate = (op, setPage) => 
     op == "dec" && page > 0 && setPage(prev => prev - 1) ||
     op == "inc" && setPage(prev => prev + 1)
+
+  const showUserProfile = (_name) => 
+  {
+    setShowProfile(prev => !prev)
+    setUserName(_name)
+    setSelectedUser("User List")
+  }
   
   const outputSectionData = {
     selectedUser,
@@ -48,7 +57,12 @@ const ContextProvider = ({ children }) => {
     controlInput,
     controlInputHandler,
     outputInput,
-    outputInputHandler
+    outputInputHandler,
+    showProfile,
+    showUserProfile,
+    setShowProfile,
+    userName,
+    setUserName,
   }
   
   return (
