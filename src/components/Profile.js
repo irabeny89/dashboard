@@ -3,6 +3,7 @@ import React, { useContext } from 'react'
 import { CgArrowLeft, CgMail } from 'react-icons/cg';
 import { FiPhoneCall, FiSmartphone } from 'react-icons/fi';
 import { Context } from './ContextProvider';
+import styles from '../../styles/Profile.module.css'
 
 const Profile = ({ user }) => {
   const { setShowProfile } = useContext(Context)
@@ -19,12 +20,12 @@ const Profile = ({ user }) => {
   } = profile
   
   return (
-    <div>
-      <div onClick={() => setShowProfile(false)}>
-        <CgArrowLeft /> RESULTS
+    <div className={styles.profile}>
+      <div onClick={() => setShowProfile(false)} className={styles.back}>
+        <CgArrowLeft color="#30bbb5" size="35" /> &nbsp;&nbsp;RESULTS
       </div>
-      <div>
-        <Image src={medium} width="200" height="200" />
+      <div className={styles.imageDiv}>
+        <Image className={styles.image} src={medium} width="200" height="200" />
       </div>
       <div>
         <h2>{title}. {first} {last} <span>{age}</span></h2>

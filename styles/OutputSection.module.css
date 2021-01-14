@@ -76,9 +76,6 @@
 }
 
 @media (min-width: 768px) {
-  .outputSection {
-    
-  }
   .inputs {
     display: flex;
     align-items: center;
@@ -90,7 +87,4 @@
   .searchBar input {
     width: unset;
   }
-  .countrySelect {
-  }
-
 }

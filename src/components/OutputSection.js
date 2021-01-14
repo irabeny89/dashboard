@@ -28,7 +28,7 @@ const OutputSection = ({ allUsers }) => {
       <p>Filter by</p>
       <div className={styles.inputs}>
         <div className={styles.searchBar}>
-          <FaSearch size="14" color="grey" />
+          <FaSearch size="14" color="#696969" />
           <input value={outputInput} placeholder="Find in list"
             onChange={outputInputHandler} />
         </div>
